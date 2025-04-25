@@ -26,6 +26,7 @@ export default tseslint.config(
       'simple-import-sort': simpleImportSort,
       react: react,
     },
+    settings: { react: { version: 'detect' } },
     rules: {
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,

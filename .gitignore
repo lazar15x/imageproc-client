@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # Yarn
-.yarn/
+.yarn
 !.yarn/cache
 !.yarn/patches
 !.yarn/plugins
