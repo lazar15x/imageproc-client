@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import react from 'eslint-plugin-react';
+import stylexPlugin from '@stylexjs/eslint-plugin';
 
 export default tseslint.config(
   { ignores: ['dist', 'node_modules'] },
@@ -25,11 +26,16 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
       'simple-import-sort': simpleImportSort,
       react: react,
+      '@stylexjs': stylexPlugin,
     },
     settings: { react: { version: 'detect' } },
     rules: {
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+      '@stylexjs/valid-styles': 'error',
+      '@stylexjs/no-unused': 'error',
+      '@stylexjs/valid-shorthands': 'warn',
+      '@stylexjs/sort-keys': 'warn',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
